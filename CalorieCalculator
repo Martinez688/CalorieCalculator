@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class CalorieCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Введите продолжительность тренировки (в минутах): ");
+        double duration = scanner.nextDouble();
+        
+        System.out.print("Введите ваш вес (в килограммах): ");
+        double weight = scanner.nextDouble();
+        
+        System.out.print("Введите интенсивность тренировки (калории/минуту): ");
+        double intensity = scanner.nextDouble();
+        
+        double caloriesBurned = calculateCaloriesBurned(duration, weight, intensity);
+        
+        System.out.println("Калории, сожженные во время тренировки: " + caloriesBurned);
+    }
+    
+    private static double calculateCaloriesBurned(double duration, double weight, double intensity) {
+        return duration * intensity * weight;
+    }
+}
